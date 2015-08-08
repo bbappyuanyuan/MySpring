@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean name="walk" class="service.impl.WalkImpl">
+        <property name="name" value="cool"/>
+    </bean>
+    <bean name="run" class="service.impl.RunImpl">
+        <property name="walk" ref="walk"/>
+    </bean>
+    <bean name="fly" class="service.impl.FlyImpl">
+        <property name="walk" ref="walk"/>
+        <property name="run" ref="run"/>
+    </bean>
+</beans>
