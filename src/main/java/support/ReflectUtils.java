@@ -1,5 +1,7 @@
 package support;
 
+import org.apache.commons.beanutils.ConvertUtils;
+
 import java.lang.reflect.Field;
 
 /**
@@ -16,6 +18,6 @@ public class ReflectUtils {
     public static void setField(Object object, String name, Object value) throws Exception {
         Field field = object.getClass().getDeclaredField(name);
         field.setAccessible(true);
-        field.set(object, value);
+        field.set(object, ConvertUtils.convert(value, field.getType()));
     }
 }

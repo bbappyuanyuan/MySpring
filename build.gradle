@@ -31,4 +31,5 @@ sourceSets {
 dependencies {
     compile 'dom4j:dom4j:1.6.1'
     compile 'junit:junit:4.12'
+    compile 'commons-beanutils:commons-beanutils:1.9.2'
 }
